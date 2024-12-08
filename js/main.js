@@ -48,10 +48,7 @@ $(document).ready(function () {
     $(".nav-item .drop-link").click(function (e) {
       e.preventDefault();
       $(this).siblings(".drop-down").slideToggle(400);
-      $(".nav-item .drop-link")
-        .not(this)
-        .siblings(".drop-down")
-        .slideUp(400);
+      $(".nav-item .drop-link").not(this).siblings(".drop-down").slideUp(400);
       $(this).toggleClass("active");
       $(".nav-item .drop-link").not(this).removeClass("active");
     });
@@ -68,7 +65,7 @@ $(document).ready(function () {
     $(".nav,.menu-btn").removeClass("active");
     $("body").removeClass("overflow");
   });
-  
+
   ////////////** footer transfer into accordion **//////////
 
   if ($(window).width() <= 767) {
@@ -98,7 +95,7 @@ $(document).ready(function () {
   var specials = new Swiper(".testimonials-slider .swiper-container", {
     loop: true,
     autoplay: true,
-    centeredSlides:true,
+    centeredSlides: true,
     pagination: {
       el: ".testimonials-slider .swiper-pagination",
       clickable: true,
@@ -126,60 +123,24 @@ $(document).ready(function () {
       },
     },
   });
-  // for counter //
-  const sectionExists =
-    document.getElementsByClassName("counter-cont").length > 0;
+  // collapse~~~~~~~~
+  $(".btn_collapse_").click(function () {
+    const toggle = $(this).next(".toggle_collapse");
+    $(toggle)
+      .stop()
+      .slideToggle("slow")
 
-  if (sectionExists) {
-    var a = 0;
-    function countFunction() {
-      $(".counter-num").each(function () {
-        var $this = $(this),
-          countTo = $this.attr("data-count");
-        $({
-          countNum: $this.text(),
-        }).animate(
-          {
-            countNum: countTo,
-          },
+      .prev(".color_toggle")
+      .toggleClass("poen_co");
+    $(toggle)
+      .prev()
+      .children()
+      .children(".backg_toggle")
+      .toggleClass("poen_backg");
+    $(toggle).parent().prev(".color_toggle").toggleClass("poen_co");
+    $(this).children(".icon-wrapper").toggleClass("is-active");
+  });
 
-          {
-            duration: 2000,
-            easing: "swing",
-            step: function () {
-              if (this.countNum < 10) {
-                $this.text("0" + Math.floor(this.countNum));
-              } else {
-                $this.text(Math.floor(this.countNum));
-              }
-            },
-            complete: function () {
-              if (this.countNum < 10) {
-                $this.text("0" + this.countNum);
-              } else {
-                $this.text(this.countNum);
-              }
-              //alert('finished');
-            },
-          }
-        );
-      });
-      a = 1;
-    }
-    $(window).scroll(function () {
-      var oTop = $(".counter-cont").offset().top - window.innerHeight;
-      if (a == 0 && $(window).scrollTop() > oTop) {
-        countFunction();
-      }
-    });
-    var oTop = $(".counter-cont").offset().top - window.innerHeight;
-    if (a == 0 && $(window).scrollTop() > oTop) {
-      countFunction();
-    }
-  } else {
-  }
-
-  // end counter //
   //////////** fixed arrow to top**//////////
   $(".arrow-top").click(function () {
     $("html").css("scroll-behavior", "unset");

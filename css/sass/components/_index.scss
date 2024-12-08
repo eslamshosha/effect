@@ -649,6 +649,7 @@ html[dir="ltr"] .process-gif {
 /*                         testimonials-section               */
 .testimonials-section {
   position: relative;
+  overflow: hidden;
   padding: 90px 0;
   background-color: $black;
 }
@@ -781,36 +782,51 @@ html[dir="ltr"] .process-gif {
 
 //contact
 .contact-section {
-  padding: 40px 0;
+  padding: 80px 0 100px;
+  @include max-767 {
+    padding: 50px 0;
+  }
+  .section-head {
+    margin-bottom: 15px;
+  }
+}
+.contact-pargh {
+  font-weight: 500;
+  font-size: 18px;
+  color: $white;
+  max-width: 905px;
+  margin: 0 auto 65px;
+  text-align: center;
+  line-height: 28.8px;
+  @include max-767 {
+    margin: 0 auto 40px;
+  }
 }
 .contact-cont {
-  display: flex;
-  align-items: flex-start;
-  gap: 67px;
+  display: grid;
+  grid-template-columns: 1fr 1.75fr;
+  gap: 54px;
   @include max-991 {
+    display: flex;
+    align-items: flex-start;
     flex-direction: column;
   }
   form {
     width: 100%;
-    max-width: 613px;
     flex-shrink: 0;
+    padding-top: 35px;
+    overflow: hidden;
+    @include max-767 {
+      padding-top: 0;
+    }
   }
 }
-.contact-header {
-  font-weight: 700;
-  font-size: 36px;
-  color: $main;
-  margin-bottom: 48px;
-  @include max-767 {
-    font-size: 28px;
-    margin-bottom: 25px;
-  }
-}
+
 .contact-form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-bottom: 32px;
+  gap: 30px 100px;
+  margin-bottom: 35px;
   @include max-767 {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -819,38 +835,78 @@ html[dir="ltr"] .process-gif {
 .form-group {
   width: 100%;
   margin-bottom: 0;
-}
-.form-label {
-  font-weight: 700;
-  font-size: 24px;
-  margin-bottom: 8px;
-  color: $main;
-  text-transform: capitalize;
-}
-.form-input {
-  background-color: transparent;
-  border-radius: 8px;
-  width: 100%;
-  height: 52px;
-  max-width: 100%;
-  padding: 0 10px;
-  color: $main;
-  font-size: 20px;
-  font-weight: 500;
-  border: 1px solid #ffc599;
-  outline: none !important;
-  transition: all 0.3s ease-in-out;
-  &:focus {
-    border-color: $hover;
+  position: relative;
+  padding-top: 16px;
+  .animated-label {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    font-weight: 500;
+    color: $white;
+    font-size: 18px;
+    cursor: text;
+    transition: 0.2s ease all;
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 45%;
+      height: 2px;
+      width: 10px;
+      visibility: hidden;
+      background-color: $main;
+      transition: 0.2s ease all;
+    }
+  }
+  &.not-empty {
+    .animated-label {
+      top: 0;
+      font-size: 12px;
+    }
+  }
+  .form-control:not(:placeholder-shown) {
+    + .animated-label {
+      top: 0;
+      font-size: 12px;
+    }
+  }
+  .form-control {
+    position: relative;
+    z-index: 1;
+    border-radius: 0;
+    border-width: 0 0 1px;
+    border-bottom-color: rgba(255, 255, 255, 0.4);
+    height: 45px;
+    padding: 3px 0 5px;
+    font-weight: 500;
+    color: $white;
+    font-size: 18px;
+    background-color: transparent;
+    &:focus {
+      box-shadow: none;
+      border-bottom-color: $main;
+      ~ .animated-label {
+        top: 0;
+        opacity: 1;
+        color: $main;
+        font-size: 12px;
+        &:after {
+          visibility: visible;
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
   }
 }
-.form-input::placeholder {
-  color: #a4b1bd;
-}
-textarea.form-input {
-  height: 231px;
-  padding: 16px 10px;
-}
+
 .full-grid {
   grid-column: 1 / -1;
 }
@@ -860,76 +916,342 @@ textarea.form-input {
   justify-content: center;
   text-align: center;
   gap: 8px;
-  color: $white;
-  background-color: $hover;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 16px;
+  color: $black;
+  background-color: $main;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 18px;
   @include tr;
-  height: 67px;
+  height: 60px;
   width: 100%;
-  max-width: 178px;
+  margin-top: 35px;
+  outline: none !important;
   &:hover {
-    background-color: $main;
+    background-color: $sec;
+    color: $main;
   }
 }
 .contact-content {
   width: 100%;
   overflow: hidden;
-  .contact-header {
-    margin-bottom: 16px;
+  background-color: $black;
+  border-radius: 20px;
+  padding: 35px 30px;
+  @include max-767 {
+    padding: 30px 20px;
   }
 }
-.contact-pargh {
+.contact-header {
+  font-weight: 700;
+  font-size: 24px;
+  color: $white;
+  margin-bottom: 15px;
+}
+.contact-text {
   font-weight: 500;
   font-size: 16px;
-  color: #33506b;
-  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 35px;
+  line-height: 25.6px;
 }
 .contact-ancors {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 28px;
+  gap: 30px;
+  margin-bottom: 40px;
 }
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-}
-.contact-info-head {
-  font-weight: 500;
-  font-size: 16px;
-  color: #778b9c;
-}
+
 .contact-item {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 24px;
-  font-weight: 700;
-  color: $hover;
+  align-items: flex-start;
+  text-align: start;
+  gap: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: $white;
   @include tr;
-  text-decoration: none !important;
   i {
-    font-size: 24px;
-    color: $main;
-    width: 32px;
-    visibility: visible;
-    opacity: 1;
-  }
-  .arrow {
-    color: $hover;
-  }
-  @include max-991 {
-    text-align: start;
+    width: 30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    @include flexCenter;
+    background-color: $white;
+    font-size: 15px;
+    color: $black;
   }
 }
 a.contact-item:hover {
   color: $main;
 }
-a.contact-item:hover i:not(.arrow) {
-  visibility: hidden;
+a.contact-item:hover i {
+  background-color: $main;
+}
+.contact-info-head {
+  font-weight: 600;
+  font-size: 24px;
+  color: $white;
+  margin-bottom: 40px;
+}
+.contact-social {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 22px;
+  a {
+    display: inline-block;
+    @include tr;
+    color: $white;
+    font-size: 21px;
+    &:hover {
+      color: $main;
+    }
+  }
+}
+//checkbox
+.check-group {
+  text-align: start;
+  margin-bottom: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  gap: 40px 60px;
+  @include max-767 {
+    gap: 20px;
+  }
+}
+.form-group .main-check-label {
+  font-weight: 500;
+  font-size: 18px;
+  color: $white;
+  text-align: start;
+  text-transform: capitalize;
+  margin-bottom: 25px;
+}
+.check-width {
+  min-width: 25%;
+}
+.check-label {
+  /* min-width: 25%; */
+  text-align: start;
+  position: relative;
+  font-weight: 500;
+  font-size: 20px;
+  color: $white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.check-group input[type="checkbox"],
+.check-group input[type="radio"] {
+  position: absolute;
   opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.check-group .checkmark {
+  border: 2px solid #aeaeae;
+  background-color: $white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.check-group .custom-checkmark {
+  border-radius: 2px;
+}
+.check-width:hover input ~ .checkmark {
+  background-color: $main;
+  border-color: $main;
+  transition: all 0.3s ease-in-out;
+}
+.check-group input:checked ~ .checkmark {
+  background-color: $main;
+  border-color: $main;
+}
+/* .check-group:hover input ~ .check-text {
+  color: var(--main-hover);
+}
+.check-group input:checked ~ .check-text {
+  color: var(--main-hover);
+} */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  visibility: visible;
+}
+.check-group input:checked ~ .checkmark:after {
+  opacity: 1;
+  visibility: visible;
+}
+.check-group .checkmark:after {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Pro";
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 14px;
+  color: $black;
+}
+.form-input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  height: 45px;
+  width: 100%;
+  padding: 0;
+  border-radius: 0;
+  text-align: start;
+  color: $white;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 0;
+  outline: none !important;
+  transition: all 0.3s ease-in-out;
+  caret-color: var(--main-color);
+  &:focus {
+    border-color: $main;
+  }
+  &::placeholder {
+    color: $white;
+  }
+}
+.form-group .form-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: $white;
+  margin-bottom: 25px;
+  display: block;
+  text-transform: capitalize;
+}
+//faq-section
+.faq-section {
+  padding: 60px 0 120px;
+  background-color: $black;
+  .section-head {
+    margin-bottom: 75px;
+  }
+  @include max-767 {
+    padding: 60px 0;
+    .section-head {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+.collapse_parant {
+  display: flex;
+  background-color: #4b4b4b4d;
+  border: 1px solid #4b4b4b;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  padding: 35px 40px;
+  @include max-767 {
+    padding: 30px 20px;
+    margin-bottom: 20px;
+  }
+
+  .group_collapse {
+    width: 100%;
+  }
+
+  .btn_collapse_ {
+    font-weight: 500;
+    font-size: 24px;
+    color: $white;
+    padding: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    text-transform: capitalize;
+    text-align: start;
+    position: relative;
+    @include max-767 {
+      font-size: 20px;
+    }
+    span {
+      max-width: 640px;
+    }
+  }
+
+  .toggle_collapse {
+    font-weight: 400;
+    font-size: 16px;
+    text-align: start;
+    line-height: 26px;
+    display: none;
+    color: #c4c4c4;
+    margin-top: 35px;
+    padding-inline-end: 60px;
+    @include max-767 {
+      padding: 0;
+    }
+  }
+
+  .toggle_collapse.open-collapse {
+    display: block;
+  }
+}
+
+.icon-wrapper {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  @include flexCenter;
+  i {
+    color: $white;
+    font-size: 14px;
+    @include tr;
+  }
+  &.is-active {
+    i {
+      transform: rotate(-87deg);
+      margin-inline-end: -30px;
+    }
+  }
+}
+.faq-item {
+  font-weight: 500;
+  font-size: 24px;
+  color: $white;
+  padding: 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  text-transform: capitalize;
+  text-align: start;
+  position: relative;
+  @include max-767 {
+    font-size: 20px;
+  }
+}
+.faq-ancor {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  color: $black;
+  background-color: $main;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  @include tr;
+  height: 46px;
+  width: 148px;
+  flex-shrink: 0;
+  &:hover {
+    background-color: $sec;
+    color: $main;
+  }
 }
