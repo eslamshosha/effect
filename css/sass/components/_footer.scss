@@ -178,6 +178,9 @@ html[dir="ltr"] .footer-link:hover {
 .newsletter-form {
   position: relative;
   width: 100%;
+  @include max-991 {
+    margin-bottom: 5px;
+  }
 }
 
 .newsletter-input {
@@ -227,6 +230,9 @@ html[dir="ltr"] .footer-link:hover {
   border: none;
   outline: none !important;
   transition: all 0.3s ease-in-out;
+  @include max-767 {
+    width: 130px;
+  }
 }
 .newsletter-btn:hover {
   color: $main;

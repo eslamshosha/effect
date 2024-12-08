@@ -1130,7 +1130,7 @@ header .nav {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 60px;
+  gap: 20px 60px;
 }
 @media only screen and (max-width: 991px) {
   .partners-imgs {
@@ -2173,12 +2173,24 @@ a.contact-item:hover i {
 }
 .icon-wrapper i {
   color: var(--white-color);
-  font-size: 14px;
+  font-size: 15px;
   transition: all 0.3s ease-in-out;
 }
 .icon-wrapper.is-active i {
   transform: rotate(-87deg);
   margin-inline-end: -30px;
+}
+@media only screen and (max-width: 767px) {
+  .icon-wrapper.is-active i {
+    margin-inline-end: -20px;
+  }
+}
+
+html[dir=rtl] .icon-wrapper i {
+  transform: scaleX(-1);
+}
+html[dir=rtl] .icon-wrapper.is-active i {
+  transform: scaleX(-1) rotate(-87deg);
 }
 
 .faq-item {
@@ -2404,6 +2416,11 @@ html[dir=ltr] .footer-link:hover {
   position: relative;
   width: 100%;
 }
+@media only screen and (max-width: 991px) {
+  .newsletter-form {
+    margin-bottom: 5px;
+  }
+}
 
 .newsletter-input {
   width: 100%;
@@ -2455,6 +2472,11 @@ html[dir=ltr] .footer-link:hover {
   border: none;
   outline: none !important;
   transition: all 0.3s ease-in-out;
+}
+@media only screen and (max-width: 767px) {
+  .newsletter-btn {
+    width: 130px;
+  }
 }
 
 .newsletter-btn:hover {

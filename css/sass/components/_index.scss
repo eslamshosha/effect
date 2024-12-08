@@ -297,7 +297,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 60px;
+  gap: 20px 60px;
   @include max-991 {
     gap: 20px;
   }
@@ -1208,13 +1208,26 @@ a.contact-item:hover i {
   @include flexCenter;
   i {
     color: $white;
-    font-size: 14px;
+    font-size: 15px;
     @include tr;
   }
   &.is-active {
     i {
       transform: rotate(-87deg);
       margin-inline-end: -30px;
+      @include max-767 {
+        margin-inline-end: -20px;
+      }
+    }
+  }
+}
+html[dir="rtl"] .icon-wrapper {
+  i {
+    transform: scaleX(-1);
+  }
+  &.is-active {
+    i{
+    transform: scaleX(-1) rotate(-87deg);
     }
   }
 }
