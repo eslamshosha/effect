@@ -25,25 +25,6 @@ $(document).ready(function () {
       $("header").removeClass("fixed");
     }
   });
-  // $("#fixedNavbar ul li a[href^='#']").on("click", function (e) {
-  //   e.preventDefault();
-  //   var hash = this.hash;
-  //   $("html, body").animate(
-  //     {
-  //       scrollTop: $(this.hash).offset().top,
-  //     },
-  //     500,
-  //     function () {
-  //       window.location.hash = hash;
-  //     }
-  //   );
-  //   if ($(window).width() <= 991) {
-  //     $(".navbar").fadeOut(300);
-  //     $(".overlay").fadeOut(300);
-  //     $(".nav,.menu-btn").removeClass("active");
-  //     $("body").removeClass("overflow");
-  //   }
-  // });
   if ($(window).width() <= 991) {
     $(".nav-item .drop-link").click(function (e) {
       e.preventDefault();

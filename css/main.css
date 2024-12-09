@@ -97,10 +97,6 @@ body {
     padding-top: 108.83px;
   }
 }
-:root {
-  --sal-duration: 1s;
-}
-
 html {
   scrollbar-width: thin;
   scrollbar-color: var(--main-color) #fff;
