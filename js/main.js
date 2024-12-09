@@ -49,8 +49,8 @@ $(document).ready(function () {
       e.preventDefault();
       $(this).siblings(".drop-down").slideToggle(400);
       $(".nav-item .drop-link").not(this).siblings(".drop-down").slideUp(400);
-      $(this).toggleClass("active");
-      $(".nav-item .drop-link").not(this).removeClass("active");
+      $(this).toggleClass("Active");
+      $(".nav-item .drop-link").not(this).removeClass("Active");
     });
   }
   $(".menu-btn").on("click", function (e) {

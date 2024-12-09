@@ -58,13 +58,13 @@
                 <a class="nav-link" href="#"> PROJECTS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html"> About us </a>
+                <a class="nav-link active" href="about.html"> About us </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="blogs.html"> Blog </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="contact.html"> Contact </a>
+                <a class="nav-link" href="contact.html"> Contact </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"> FAQs </a>
@@ -88,162 +88,77 @@
     <!-- Start content -->
     <section class="content-section">
       <div class="container">
-        <h2 class="page-title">Get in Touch</h2>
+        <h2 class="page-title">About Us</h2>
         <p class="page-pargh">
-          Connect with our team to discuss your project, ask questions, or get
-          more information on how we can help you achieve your goals.
+          Explore the talented professionals behind Effect who drive our success
+          with their expertise and innovation
         </p>
-        <div class="contact-cont">
-          <div class="contact-content">
-            <h4 class="contact-header">Let’s work together</h4>
-            <p class="contact-text">
-              Fill up the form and our Team will get back to you within 24
-              hours.
+        <div class="team-section">
+          <div class="team-content">
+            <h3 class="team-head">Meet Our Team</h3>
+            <p class="team-pargh">
+              At Effect, our team of skilled professionals in programming,
+              design, and marketing drives innovation and excellence. We
+              collaborate creatively to turn ambitious ideas into impactful
+              solutions. Join us and be part of a dynamic group dedicated to
+              making a difference.
             </p>
-            <div class="contact-ancors">
-              <a class="contact-item" href="tel:+91 98765 43210">
-                <i class="fa-solid fa-mobile-button"></i>
-                <span>+91 98765 43210</span>
-              </a>
-              <div class="contact-info">
-                <a
-                  class="contact-item"
-                  href="mailto:Effect.io"
-                  style="text-decoration: underline"
-                >
-                  <i class="fa-solid fa-envelope-open"></i>
-                  <span>Effect.io</span>
-                </a>
-              </div>
-              <div class="contact-info">
-                <a class="contact-item" href="#">
-                  <i class="fa-light fa-globe"></i>
-                  <span>https://Effect.io</span>
-                </a>
-              </div>
-              <div class="contact-info">
-                <a class="contact-item" href="#">
-                  <i class="fa-light fa-location-dot"></i>
-                  <span
-                    >20 Al Khail Road,<br />Business Bay Tower,<br />Dubai,
-                    United Arab Emirates
-                  </span>
-                </a>
-              </div>
+          </div>
+          <div class="team-img">
+            <figure><img src="images/about.jpg" alt="team" /></figure>
+          </div>
+        </div>
+        <div class="leader-section">
+          <h3 class="team-head">Our Leadership Team</h3>
+          <p class="page-pargh">
+            Our leadership team at Effect is composed of visionary experts who
+            guide our strategic direction with a commitment to innovation and
+            excellence.
+          </p>
+          <div class="leader-cont">
+            <div class="leader-item">
+              <figure>
+                <img src="images/leadership/01.png" alt="leader" />
+              </figure>
+              <div class="leader-name">Ezaden Herzallah</div>
+              <span class="leader-desc">UI UX</span>
             </div>
-            <h3 class="contact-info-head">Follow us</h3>
-            <div class="contact-social">
-              <a href="#">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-x-twitter"></i>
-              </a>
+            <div class="leader-item">
+              <figure>
+                <img src="images/leadership/02.png" alt="leader" />
+              </figure>
+              <div class="leader-name">Tariq Khanfar</div>
+              <span class="leader-desc">CTO</span>
+            </div>
+            <div class="leader-item">
+              <figure>
+                <img src="images/leadership/03.jpg" alt="leader" />
+              </figure>
+              <div class="leader-name">Anas Muhammad</div>
+              <span class="leader-desc">CEO</span>
+            </div>
+            <div class="leader-item">
+              <figure>
+                <img src="images/leadership/04.png" alt="leader" />
+              </figure>
+              <div class="leader-name">Ezaden Herzallah</div>
+              <span class="leader-desc">UI UX</span>
+            </div>
+            <div class="leader-item">
+              <figure>
+                <img src="images/leadership/05.png" alt="leader" />
+              </figure>
+              <div class="leader-name">Tariq Khanfar</div>
+              <span class="leader-desc">CTO</span>
+            </div>
+            <div class="leader-item">
+              <figure>
+                <img src="images/leadership/06.png" alt="leader" />
+              </figure>
+              <div class="leader-name">Anas Muhammad</div>
+              <span class="leader-desc">CEO</span>
             </div>
           </div>
-          <form action="">
-            <div class="contact-form">
-              <div class="form-group" ng-class="{'not-empty': userName.length}">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="user"
-                  id="user"
-                  ng-model="userName"
-                  placeholder=" "
-                />
-                <label for="user" class="animated-label">First Name</label>
-              </div>
-              <div class="form-group" ng-class="{'not-empty': LastName.length}">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="LastName"
-                  id="LastName"
-                  ng-model="LastName"
-                  placeholder=" "
-                />
-                <label for="LastName" class="animated-label">Last Name</label>
-              </div>
-              <div class="form-group" ng-class="{'not-empty': Mail.length}">
-                <input
-                  type="email"
-                  class="form-control"
-                  name="Mail"
-                  id="Mail"
-                  ng-model="Mail"
-                  placeholder=" "
-                />
-                <label for="Mail" class="animated-label">Mail</label>
-              </div>
-              <div class="form-group" ng-class="{'not-empty': Phone.length}">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="Phone"
-                  id="Phone"
-                  ng-model="Phone"
-                  placeholder=" "
-                />
-                <label for="Phone" class="animated-label">Phone</label>
-              </div>
-            </div>
-            <div class="form-group main-check">
-              <label class="main-check-label">What service do you need?</label>
-              <div class="check-group">
-                <div class="check-width">
-                  <label class="check-label">
-                    <input type="checkbox" checked="checked" />
-                    <span class="checkmark"></span>
-                    <span class="check-text">Web Design</span>
-                  </label>
-                </div>
-                <div class="check-width">
-                  <label class="check-label">
-                    <input type="checkbox" />
-                    <span class="checkmark"></span>
-                    <span class="check-text">App Design</span>
-                  </label>
-                </div>
-                <div class="check-width">
-                  <label class="check-label">
-                    <input type="checkbox" />
-                    <span class="checkmark"></span>
-                    <span class="check-text">Graphic Design</span>
-                  </label>
-                </div>
-                <div class="check-width">
-                  <label class="check-label">
-                    <input type="checkbox" />
-                    <span class="checkmark"></span>
-                    <span class="check-text">Digital Marketing</span>
-                  </label>
-                </div>
-                <div class="check-width">
-                  <label class="check-label">
-                    <input type="checkbox" />
-                    <span class="checkmark"></span>
-                    <span class="check-text">Other</span>
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Message</label>
-              <input
-                type="text"
-                class="form-input"
-                placeholder="Write your message..."
-              />
-            </div>
-            <button type="submit" class="submit-btn">Submit</button>
-          </form>
         </div>
       </div>
     </section>

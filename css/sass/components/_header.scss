@@ -222,7 +222,7 @@ header .nav {
   .drop-link::after {
     display: inline-block;
   }
-  .drop-link.active::after {
+  .drop-link.Active::after {
     transform: rotate(180deg);
   }
 }
