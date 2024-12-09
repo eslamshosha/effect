@@ -928,6 +928,14 @@ header .nav {
   }
 }
 
+.main-gif {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+.main-gif img {
+  width: 100%;
+}
 @media only screen and (max-width: 991px) {
   .main-gif .socials.main-socials {
     display: none;
@@ -1261,6 +1269,7 @@ header .nav {
 .process-section {
   padding: 70px 0 100px;
   background-color: var(--black-color);
+  overflow: hidden;
 }
 @media only screen and (max-width: 767px) {
   .process-section {
@@ -1411,6 +1420,7 @@ html[dir=ltr] .process-gif {
 
 .work-section {
   padding: 90px 0 140px;
+  overflow: hidden;
 }
 @media only screen and (max-width: 767px) {
   .work-section {
@@ -1693,6 +1703,7 @@ html[dir=ltr] .process-gif {
 /*                         testimonials-section               */
 .contact-section {
   padding: 80px 0 100px;
+  overflow: hidden;
 }
 @media only screen and (max-width: 767px) {
   .contact-section {
@@ -2088,6 +2099,7 @@ a.contact-item:hover i {
 .faq-section {
   padding: 60px 0 120px;
   background-color: var(--black-color);
+  overflow: hidden;
 }
 .faq-section .section-head {
   margin-bottom: 75px;
