@@ -200,10 +200,10 @@
     border-color: #21d0ed;
     background-color: rgba(33, 208, 237, 0.2);
   }
-  &:nth-of-type(1) {
-    border: 5px solid #21d0ed;
-    background-color: rgba(33, 208, 237, 0.2);
-  }
+  // &:nth-of-type(1) {
+  //   border: 5px solid #21d0ed;
+  //   background-color: rgba(33, 208, 237, 0.2);
+  // }
   @include max-767 {
     padding: 30px 20px;
   }
