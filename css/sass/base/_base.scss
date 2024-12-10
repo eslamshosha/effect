@@ -104,7 +104,12 @@ body {
   font-style: normal;
   font-weight: 400;
   background-color: $hover;
-  padding-top: 172.75px;
+  padding-top: 172.97px;
+}
+@include max-1200 {
+  body {
+    padding-top: 139px;
+  }
 }
 @include max-991 {
   body {
@@ -113,7 +118,7 @@ body {
 }
 @include max-767 {
   body {
-    padding-top: 108.83px;
+    padding-top: 109.13px;
   }
 }
 :root {

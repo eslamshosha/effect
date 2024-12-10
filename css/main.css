@@ -84,9 +84,14 @@ body {
   font-style: normal;
   font-weight: 400;
   background-color: var(--main-hover);
-  padding-top: 172.75px;
+  padding-top: 172.97px;
 }
 
+@media only screen and (max-width: 1199px) {
+  body {
+    padding-top: 139px;
+  }
+}
 @media only screen and (max-width: 991px) {
   body {
     padding-top: 128.09px;
@@ -94,7 +99,7 @@ body {
 }
 @media only screen and (max-width: 767px) {
   body {
-    padding-top: 108.83px;
+    padding-top: 109.13px;
   }
 }
 html {
@@ -1030,8 +1035,30 @@ header .nav {
   border-image-source: linear-gradient(138.41deg, #292929 0.4%, rgba(41, 41, 41, 0) 75.22%);
   background-color: rgba(19, 19, 19, 0.8901960784);
   margin-bottom: 26px;
+  transition: all 0.3s ease-in-out;
 }
 
+.services-item:hover img {
+  animation: hithere 1s ease infinite;
+}
+
+@keyframes hithere {
+  30% {
+    transform: scale(1.2);
+  }
+  40%, 60% {
+    transform: rotate(-20deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(20deg) scale(1.2);
+  }
+  70% {
+    transform: rotate(0deg) scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .services-item-head {
   font-weight: 900;
   font-size: 21px;
