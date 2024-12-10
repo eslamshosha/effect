@@ -312,7 +312,7 @@ html[dir="ltr"] .progress-bar {
 /*                                 arrow-top                           */
 .arrow-top {
   position: fixed;
-  bottom: 85px;
+  bottom: 40px;
   inset-inline-start: 20px;
   display: none;
   padding: 0;
@@ -338,7 +338,7 @@ html[dir="ltr"] .progress-bar {
 }
 .fixed-what {
   position: fixed;
-  bottom: 10px;
+  top: 50%;
   inset-inline-start: 10px;
   z-index: 10;
   text-decoration: none !important;
@@ -379,12 +379,12 @@ html[dir="ltr"] .progress-bar {
 }
 @media (max-width: 767px) {
   .arrow-top {
-    bottom: 70px;
+    bottom: 35px;
     inset-inline-start: 15px;
   }
   .fixed-what {
     position: fixed;
-    bottom: 10px;
+    bottom: 50%;
     inset-inline-start: 10px;
   }
   .fixed-what i {
